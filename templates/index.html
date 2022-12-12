@@ -5,8 +5,25 @@
     <title>Новая страница</title>
 </head>
 <body>
-<h1>Новый заголовок</h1>
-{{a}}
-<h2>{{text}}</h2>
+{% if obj_list %}
+<table border="1">
+        <tr>
+            <th>ID</th>
+            <th>ДАТА</th>
+            <th>ИМЯ</th>
+            <th>ТЕЛЕФОН</th>
+        </tr>
+        {% for obj in obj_list %}
+            <tr>
+                <td>{{ obj.id }}</td>
+                <td>{{ obj.order_dt }}</td>
+                <td>{{ obj.order_name }}</td>
+                <td>{{ obj.order_phone }}</td>
+            </tr>
+        {% endfor %}
+</table>
+{% else %}
+<h2>Данных нет</h2>
+{% endif %}
 </body>
 </html>
