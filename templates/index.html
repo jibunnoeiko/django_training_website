@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Новая страница</title>
-</head>
-<body>
+{%extends 'base.html' %}
 
+{% block content %}
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<h1>Наследование шаблонов</h1>
+{% include 'index_old.html' %}
 
-<style>
-    .style_red {
-        background-color: #5b80b2;
-    }
-</style>
-
-<form action="{% url 'thanks_page' %}" method="POST">
-    {% csrf_token %}
-    {{ form.as_div }}
-    <button type="submit">Отправить</button>
-</form>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-{% if obj_list %}
-<table border="1">
-        <tr>
-            <th>ID</th>
-            <th>ДАТА</th>
-            <th>ИМЯ</th>
-            <th>ТЕЛЕФОН</th>
-        </tr>
-        {% for obj in obj_list %}
-            <tr>
-                <td>{{ obj.id }}</td>
-                <td>{{ obj.order_dt }}</td>
-                <td>{{ obj.order_name }}</td>
-                <td>{{ obj.order_phone }}</td>
-            </tr>
-        {% endfor %}
-</table>
-{% else %}
-<h2>Данных нет</h2>
-{% endif %}
-</body>
-</html>
+{% endblock %}
