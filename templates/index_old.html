@@ -14,12 +14,6 @@
 <br>
 <br>
 
-<style>
-    .style_red {
-        background-color: #5b80b2;
-    }
-</style>
-
 <form action="{% url 'thanks_page' %}" method="POST">
     {% csrf_token %}
     {{ form.as_div }}
