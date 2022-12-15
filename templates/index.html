@@ -1,7 +1,10 @@
 {%extends 'base.html' %}
+{% block title %} тайтл :D {% endblock %}
 
+{% load static%}
 {% block content %}
 
+<img src="{% static 'imgs\lu_guang.jpg' %}" height="600px">
 <h1>Наследование шаблонов</h1>
 {% include 'index_old.html' %}
 
